@@ -29,8 +29,8 @@ public class ProductController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteProductBySku(@PathVariable("id") String skuCode) {
+    @DeleteMapping("/{skuCode}")
+    public ResponseEntity<Object> deleteProductBySku(@PathVariable("skuCode") String skuCode) {
         try {
             productService.deleteProductBySku(skuCode);
         } catch (Exception e) {
@@ -39,8 +39,8 @@ public class ProductController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Product> findProductBySku(@PathVariable("id") String skuCode) {
+    @GetMapping("/{skuCode}")
+    public ResponseEntity<Product> findProductBySku(@PathVariable("skuCode") String skuCode) {
         return productService.findProductBySkuCode(skuCode)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());

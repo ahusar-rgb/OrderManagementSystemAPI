@@ -14,7 +14,7 @@ public class OrderLineController {
         this.orderLineService = orderLineService;
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Object> updateQuantity(@PathVariable("id") Long id, @RequestBody Integer quantity) {
         try {
             orderLineService.updateQuantity(id, quantity);
