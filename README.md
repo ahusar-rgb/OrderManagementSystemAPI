@@ -91,7 +91,7 @@ Products:
 
 Order Lines:
   - Update Product Quantity:
-    - POST
+    - PUT
     - */api/v1/order-line/{id}*
     - {id} - id of the updated product
     - Requst Body - Integer number
